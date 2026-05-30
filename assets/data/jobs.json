@@ -1,0 +1,233 @@
+[
+  {
+    "id": "toemmersv-entreprise",
+    "title": "Faglært tømrersvend",
+    "type": "Fuldtid",
+    "location": "Storkøbenhavn",
+    "department": "Entreprise",
+    "active": true,
+    "teaser": "Vi søger faglærte tømrersvende til entreprise- og renoveringsopgaver i Storkøbenhavn. Tag, vinduer, renovering og service på beboede ejendomme.",
+    "description": "Vi søger faglærte tømrersvende til entreprise- og renoveringsopgaver i Storkøbenhavn. Du bliver en del af en virksomhed med ordentlige rammer, tydelig ledelse og projekter, hvor kvalitet, planlægning og samarbejde betyder noget.",
+    "tasks": [
+      "Tagarbejde – udskiftning og renovering af alle typer tage",
+      "Vinduer og døre – montering og udskiftning",
+      "Renovering af facader og klimaskærm",
+      "Service og spjæld på ejendomme",
+      "Tømrerarbejde på beboede ejendomme med hensyn til beboere",
+      "Koordinering med øvrige fag på pladsen"
+    ],
+    "requirements": [
+      "Faglært tømrer med svendebrev",
+      "Erfaring fra renoverings- eller entrepriseopgaver",
+      "Vant til at arbejde struktureret og holde tidsplaner",
+      "God omgangstone og samarbejdsvilje",
+      "Kørekort B"
+    ],
+    "offers": [
+      "Overenskomstmæssige vilkår og pensionsordning",
+      "Varierede opgaver på store og komplekse projekter",
+      "Tydelig ansvarsfordeling og klare rammer fra dag 1",
+      "Fokus på sikkerhed og ordentlige arbejdsforhold",
+      "Mulighed for faglig udvikling og ansvar"
+    ]
+  },
+  {
+    "id": "toemmersv-service",
+    "title": "Tømrersvend – Service/spjæld",
+    "type": "Fuldtid",
+    "location": "Storkøbenhavn",
+    "department": "Service",
+    "active": false,
+    "teaser": "Til vores serviceafdeling søger vi en tømrersvend med erfaring i løbende vedligehold og servicebesøg på erhvervsejendomme.",
+    "description": "Til vores serviceafdeling søger vi en erfaren tømrersvend til løbende vedligehold, servicebesøg og spjæld på erhvervsejendomme i Storkøbenhavn.",
+    "tasks": [
+      "Løbende vedligehold og mindre udbedringer",
+      "Planlagte eftersyn og servicebesøg",
+      "Spjæld og bygningsmæssige tilpasninger",
+      "Afrapportering til ejendomsadministrator eller driftsansvarlig"
+    ],
+    "requirements": [
+      "Faglært tømrer med svendebrev",
+      "Erfaring fra servicearbejde på ejendomme",
+      "Selvstændig og struktureret arbejdsform",
+      "Kørekort B"
+    ],
+    "offers": [
+      "Overenskomstmæssige vilkår",
+      "Stabil hverdag med faste ruteopgaver",
+      "Tydelige rammer og god kommunikation",
+      "Mulighed for mere ansvar over tid"
+    ]
+  },
+  {
+    "id": "toemmerlaerling",
+    "title": "Tømrerlærling",
+    "type": "Læreplads",
+    "location": "Glostrup",
+    "department": "Entreprise",
+    "active": false,
+    "teaser": "Vi tilbyder læreplads til en engageret tømrerlærling. Du vil arbejde på rigtige entrepriseprojekter og lære håndværket fra bunden.",
+    "description": "Svaneeng A/S tilbyder læreplads til en engageret og fagligt interesseret tømrerlærling. Du vil arbejde side om side med vores erfarne svende på entrepriseprojekter i hele Storkøbenhavn.",
+    "tasks": [
+      "Praktisk tømrerarbejde på byggepladser",
+      "Renovering, tag, vinduer og indretning",
+      "Arbejde under vejledning af erfarne tømrere",
+      "Deltagelse i faglige processer fra start til aflevering"
+    ],
+    "requirements": [
+      "Igangværende tømreruddannelse",
+      "Møder til tiden og er pålidelig",
+      "Interesseret i at lære håndværket ordentligt",
+      "Positiv indstilling og samarbejdsvilje"
+    ],
+    "offers": [
+      "Uddannelsesaftale på overenskomstvilkår",
+      "Faglige udfordringer og varierede opgaver",
+      "Tæt opfølgning og vejledning fra erfarne kolleger",
+      "Mulighed for ansættelse som svend efter endt uddannelse"
+    ]
+  },
+  {
+    "id": "byggeleder",
+    "title": "Byggeleder",
+    "type": "Fuldtid",
+    "location": "Glostrup",
+    "department": "Projektstyring",
+    "active": false,
+    "teaser": "Er du erfaren byggeleder med rod i tømrer- eller byggebranchen og forståelse for AB 18? Vi søger løbende til vores entrepriseafdeling.",
+    "description": "Vi søger løbende erfarne byggeledere til at stå i spidsen for vores entrepriseprojekter. Du skal have styr på tidsplaner, koordinering, kommunikation og den faglige udførelse.",
+    "tasks": [
+      "Daglig ledelse af byggepladser og underentreprenører",
+      "Tidsplan, ressourceplanlægning og budgetopfølgning",
+      "Kommunikation til bygherre, rådgivere og underentreprenører",
+      "Kvalitetssikring, dokumentation og mangelgennemgang",
+      "Deltagelse i byggemøder og slutafleveringer"
+    ],
+    "requirements": [
+      "Erfaring som byggeleder eller formand i tømrer-/byggebranchen",
+      "Kendskab til AB 18 og gældende standarder",
+      "Stærke kommunikationsevner og overblik",
+      "Erfaring med tidsplanlægning og koordinering af fag",
+      "Kørekort B"
+    ],
+    "offers": [
+      "Konkurrencedygtig løn efter erfaring",
+      "Ansvar på komplekse projekter i Storkøbenhavn",
+      "Professionelt arbejdsmiljø med klare rammer",
+      "Overenskomstmæssige vilkår og pensionsordning"
+    ]
+  },
+  {
+    "id": "projektleder",
+    "title": "Projektleder",
+    "type": "Fuldtid",
+    "location": "Glostrup",
+    "department": "Projektstyring",
+    "active": false,
+    "teaser": "Erfaren projektleder med forståelse for entrepriseopgaver, AB 18 og tværfaglig koordinering? Vi hører gerne fra dig.",
+    "description": "Vi søger erfarne projektledere til vores entrepriseafdeling. Du skal kunne håndtere komplekse projekter fra kontraktindgåelse til aflevering – med fokus på økonomi, tid og kvalitet.",
+    "tasks": [
+      "Projektstyring fra opstart til slutaflevering",
+      "Kontrakthåndtering og økonomiansvar",
+      "Koordinering af underentreprenører og fag",
+      "Tæt kommunikation til bygherre og rådgivere",
+      "Kvalitetssikring og dokumentation i AB 18-regi"
+    ],
+    "requirements": [
+      "Erfaring fra entreprise- eller byggebranchen",
+      "Solidt kendskab til AB 18",
+      "Stærke koordinerings- og kommunikationsevner",
+      "Erfaring med økonomiansvar på projekter",
+      "Relevant uddannelse inden for byggeri eller teknisk ledelse"
+    ],
+    "offers": [
+      "Ansvarlig stilling med bred kontaktflade",
+      "Konkurrencedygtig løn og pensionsordning",
+      "Komplekse, varierede projekter i Storkøbenhavn",
+      "Professionelt team og klare processer"
+    ]
+  },
+  {
+    "id": "pladsmand",
+    "title": "Pladsmand",
+    "type": "Fuldtid",
+    "location": "Storkøbenhavn",
+    "department": "Entreprise",
+    "active": false,
+    "teaser": "Til vores entrepriseprojekter søger vi en erfaren pladsmand, der kan holde styr på byggepladsen, materiel og logistik.",
+    "description": "Vi søger en pladsmand med erfaring fra entreprise- eller renoveringsprojekter. Du vil arbejde tæt sammen med byggeleder og svende og have ansvar for pladsens daglige drift.",
+    "tasks": [
+      "Daglig drift og orden på byggepladsen",
+      "Håndtering af materiel, materialer og leverancer",
+      "Støtte til byggeleder og svende",
+      "Kontakt til leverandører og underentreprenører ved pladsopgaver"
+    ],
+    "requirements": [
+      "Erfaring fra byggepladser",
+      "Struktureret og selvstændig arbejdsform",
+      "Fysisk robust og egnet til praktisk arbejde",
+      "Kørekort B (lastbilkørekort er en fordel)"
+    ],
+    "offers": [
+      "Overenskomstmæssige vilkår",
+      "Varierede opgaver på Storkøbenhavnske projekter",
+      "Godt arbejdsmiljø og klare rammer"
+    ]
+  },
+  {
+    "id": "admin",
+    "title": "Administrativ medarbejder",
+    "type": "Fuldtid",
+    "location": "Glostrup",
+    "department": "Administration",
+    "active": false,
+    "teaser": "Til vores kontor søger vi en administrativ medarbejder til at understøtte projektstyring, fakturering og daglig drift.",
+    "description": "Vi søger en administrativ medarbejder til vores kontor i Glostrup. Du vil indgå i daglig drift af virksomheden og støtte projektledere og ledelse i administrative opgaver.",
+    "tasks": [
+      "Fakturering og debitorstyring",
+      "Understøtning af projektledere og byggeledere",
+      "Håndtering af korrespondance og dokumentation",
+      "Bestilling af materialer og kontakt til leverandører",
+      "Generel kontordrift"
+    ],
+    "requirements": [
+      "Erfaring fra en lignende administrativ stilling",
+      "Struktureret og selvstændig med god ordenssans",
+      "Gode IT-kompetencer (Office, regnskabsprogram)",
+      "Forståelse for byggebranchen er en fordel"
+    ],
+    "offers": [
+      "Fast stilling i velfungerende virksomhed",
+      "Varierede arbejdsopgaver",
+      "Gode kolleger og ordentlige rammer",
+      "Pension og overenskomstmæssige vilkår"
+    ]
+  },
+  {
+    "id": "praktikant",
+    "title": "Praktikant",
+    "type": "Praktik",
+    "location": "Glostrup",
+    "department": "Projektstyring / Administration",
+    "active": false,
+    "teaser": "Er du studerende inden for byggeri, teknik eller administration og søger praktikplads? Vi byder velkommen til motiverede praktikanter.",
+    "description": "Vi byder velkommen til motiverede studerende, der søger praktikophold hos en etableret tømrer- og entreprisevirksomhed. Vi tilbyder indblik i projektstyring, koordinering og faglig udførelse i praksis.",
+    "tasks": [
+      "Støtte til projektledere og byggeledere",
+      "Dokumentation og kvalitetssikring",
+      "Deltagelse i byggemøder og pladsinspektioner",
+      "Administrative opgaver efter aftale"
+    ],
+    "requirements": [
+      "Studerende inden for byggeri, byggeteknik, konstruktøruddannelse eller administration",
+      "Engageret og nysgerrig på branchen",
+      "Struktureret og ansvarlig tilgang"
+    ],
+    "offers": [
+      "Praktisk indblik i tømrer- og entreprisebranchen",
+      "Faglig vejledning fra erfarne kollegaer",
+      "Fleksibilitet ift. studieforløb",
+      "Mulighed for ansættelse efter endt studium"
+    ]
+  }
+]
