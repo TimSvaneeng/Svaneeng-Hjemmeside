@@ -257,4 +257,48 @@ document.addEventListener('DOMContentLoaded', function () {
 
       if (!name || !email) {
         alert('Udfyld venligst navn og e-mail.');
-    
+        return;
+      }
+
+      // CV-validering trin 1 – er CV obligatorisk for denne stilling?
+      const cvInput    = document.getElementById('applicant_cv');
+      const cvIsRequired = cvInput && cvInput.getAttribute('data-cv-required') === 'true';
+      const cvHasFile    = cvInput && cvInput.files && cvInput.files.length > 0;
+
+      if (cvIsRequired && !cvHasFile) {
+        const stillingLabel = position || 'denne stilling';
+        alert('Ved ansøgning som ' + stillingLabel + ' skal du vedhæfte CV.');
+        cvInput.focus();
+        return;
+      }
+
+      // CV-validering trin 2 – filtype og størrelse (kun hvis fil er valgt)
+      if (cvHasFile) {
+        const file = cvInput.files[0];
+        const allowedTypes = [
+          'application/pdf',
+          'application/msword',
+          'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+        ];
+        const allowedExts = /\.(pdf|doc|docx)$/i;
+        const maxSize = 10 * 1024 * 1024; // 10 MB
+        if (!allowedTypes.includes(file.type) && !allowedExts.test(file.name)) {
+          alert('Kun PDF, DOC eller DOCX er tilladt som CV/bilag.');
+          return;
+        }
+        if (file.size > maxSize) {
+          alert('Filen er for stor. Maks. tilladt størrelse er 10 MB.');
+          return;
+        }
+      }
+
+      // Byg mailemne til reference (bruges af backend – se kommentar ved hidden fields)
+      const subject = buildEmailSubject(name, position, address);
+      console.info('[Svaneeng] Beregnet mailemne (til backend-reference):', subject);
+
+      // PLACEHOLDER: Ingen reel afsendelse – vis bekræftelse
+      alert('Tak for din ansøgning, ' + name + '!\nVi vender tilbage hurtigst muligt.');
+    });
+  }
+
+});

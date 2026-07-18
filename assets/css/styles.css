@@ -1100,7 +1100,7 @@ footer {
   transition: transform 0.2s ease;
 }
 .faq-item[open] > .faq-question::after {
-  content: '-';
+  content: '−';
 }
 .faq-answer {
   padding: 0 0 1.25rem 0;

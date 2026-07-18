@@ -85,4 +85,38 @@ document.addEventListener('DOMContentLoaded', function () {
   // ── BACK-TO-TOP ──────────────────────────────────────────────
   const backTop = document.getElementById('back-to-top');
   if (backTop) {
-    window.addEventListener('scroll', functio
+    window.addEventListener('scroll', function () {
+      backTop.classList.toggle('visible', window.scrollY > 600);
+    });
+    backTop.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // ── GDPR MODAL – LUK VED BACKDROP-KLIK ───────────────────────
+  const gdprModal = document.getElementById('gdpr-modal');
+  if (gdprModal) {
+    gdprModal.addEventListener('click', function (e) {
+      if (e.target === this) this.style.display = 'none';
+    });
+  }
+
+  // ── KONTAKTFORMULAR (PLACEHOLDER – BACKEND IKKE KOBLET) ───────
+  // OBS: Formularen er ikke koblet til en rigtig backend endnu.
+  // Erstat action="" på <form class="kontakt-form"> og håndter submit
+  // med et fetch/POST-kald til jeres backend-endpoint inden go-live.
+  const kontaktForm = document.querySelector('form.kontakt-form');
+  if (kontaktForm) {
+    kontaktForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const name  = document.getElementById('field-name')?.value?.trim();
+      const email = document.getElementById('field-email')?.value?.trim();
+      if (!name || !email) {
+        alert('Udfyld venligst navn og e-mail.');
+        return;
+      }
+      alert('Tak for din henvendelse, ' + name + '!\nVi vender tilbage hurtigst muligt.');
+    });
+  }
+
+});
