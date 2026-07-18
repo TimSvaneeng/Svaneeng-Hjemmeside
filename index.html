@@ -206,6 +206,43 @@
   </div>
 </section>
 
+<!-- ── HVEM VI ARBEJDER FOR ── -->
+<section id="hvem-vi-arbejder-for" class="kunder-section">
+  <div class="kunder-inner reveal">
+    <p class="section-label">Vores kunder</p>
+    <div class="divider"></div>
+    <h2 class="section-title">Vi arbejder udelukkende<br>for <em>erhvervskunder</em></h2>
+    <p class="kunder-intro">Svaneeng A/S løser opgaver for professionelle bygherrer og ejendomsejere i Storkøbenhavn. Vi arbejder ikke med private.</p>
+    <div class="kunder-grid">
+      <div class="kunder-item">
+        <div class="kunder-icon">🏢</div>
+        <div class="kunder-label">Ejendomsadministratorer</div>
+        <div class="kunder-text">Administratorer med porteføljer af ejendomme, der har brug for en fast og pålidelig håndværkspartner til planlagte og akutte opgaver.</div>
+      </div>
+      <div class="kunder-item">
+        <div class="kunder-icon">🏘</div>
+        <div class="kunder-label">Boligforeninger</div>
+        <div class="kunder-text">Andels- og ejerforeninger med store renoverings- og vedligeholdsprojekter, typisk via rådgiver og med krav om AB 18-forløb og løbende dokumentation.</div>
+      </div>
+      <div class="kunder-item">
+        <div class="kunder-icon">🏗</div>
+        <div class="kunder-label">Professionelle bygherrer</div>
+        <div class="kunder-text">Institutionelle og kommercielle bygherrer med erfaring i udbudsprojekter, der forventer strukturerede processer og klar kommunikation.</div>
+      </div>
+      <div class="kunder-item">
+        <div class="kunder-icon">📐</div>
+        <div class="kunder-label">Rådgivere og arkitekter</div>
+        <div class="kunder-text">Ingeniør- og arkitektfirmaer, der tilrettelægger entrepriser og har brug for en håndværkspartner, der forstår projektmaterialet og holder tidsplanen.</div>
+      </div>
+      <div class="kunder-item">
+        <div class="kunder-icon">🔑</div>
+        <div class="kunder-label">Ejendomsejere</div>
+        <div class="kunder-text">Private og institutionelle ejendomsejere med portefølje af udlejningsejendomme – typisk til renovering ved tomgang eller planlagte vedligeholdsrunder.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ── SÅDAN ARBEJDER VI ── -->
 <section id="proces">
   <div class="proces-intro reveal">
@@ -324,10 +361,10 @@
       </div>
     </div>
 
-    <!-- Kort 2 -->
+    <!-- Kort 2: Skjult indtil rigtige referencebilleder og projekttekst er klar -->
+    <!--
     <div class="ref-card">
       <div class="ref-img">
-        <!-- Erstat src med faktisk projektbillede inden go-live -->
         <img
           src="assets/images/reference-02.jpg"
           alt="Tagrenovering på boligforening i Storkøbenhavn – udskiftning af tegltag, kviste og inddækninger"
@@ -352,11 +389,12 @@
         <a href="#kontakt" class="ref-cta">Tal med os om et lignende projekt →</a>
       </div>
     </div>
+    -->
 
-    <!-- Kort 3 -->
+    <!-- Kort 3: Skjult indtil rigtige referencebilleder og projekttekst er klar -->
+    <!--
     <div class="ref-card">
       <div class="ref-img">
-        <!-- Erstat src med faktisk projektbillede inden go-live -->
         <img
           src="assets/images/reference-03.jpg"
           alt="Lejlighedsrenovering med koordinering af tømrer, maler, el og VVS"
@@ -381,7 +419,12 @@
         <a href="#kontakt" class="ref-cta">Tal med os om et lignende projekt →</a>
       </div>
     </div>
+    -->
 
+  </div>
+
+  <div class="reveal" style="margin-top:1.5rem; color:var(--ink-soft); font-size:0.85rem; font-style:italic;">
+    Flere referencer og projektbilleder tilføjes løbende.
   </div>
 
   <div class="reveal" style="margin-top:3rem; padding:1.5rem 2rem; border-left:3px solid var(--line); background:var(--bg); border-radius:0 2px 2px 0; max-width:680px;">
@@ -486,7 +529,7 @@
       <div class="divider"></div>
       <h2 class="section-title">Send os en <em>ansøgning</em></h2>
       <p>
-        Vi søger aktuelt faglærte tømrersvende. Er du interesseret i at arbejde hos Svaneeng A/S, er du velkommen til at sende os en kort ansøgning via formularen nedenfor.
+        Vi søger aktuelt faglærte tømrersvende. Er du interesseret i at arbejde hos Svaneeng A/S, er du velkommen til at sende os en kort ansøgning på mail.
       </p>
       <p>
         Vi prioriterer ordentlighed, struktur og faglig stolthed – og vi behandler alle ansøgninger seriøst og fortroligt.
@@ -495,7 +538,14 @@
 
     <div class="reveal">
       <!-- ══════════════════════════════════════════════════════════════════════
-           ANSØGNINGSFORMULAR – BACKEND-INTEGRATION IKKE KOBLET ENDNU
+           ANSØGNINGSFORMULAR – MIDLERTIDIGT SKJULT INDTIL BACKEND ER KLAR
+           ══════════════════════════════════════════════════════════════════════
+           Formularen er ikke koblet til backend og er derfor skjult for brugeren.
+           Brugere sendes i stedet til mailto-blokken nedenfor.
+           Genaktivér formularen (fjern display:none nedenfor) når backend er klar.
+           ══════════════════════════════════════════════════════════════════ -->
+
+      <!-- ANSØGNINGSFORMULAR – BACKEND-INTEGRATION IKKE KOBLET ENDNU
            ══════════════════════════════════════════════════════════════════════
            STATUS: Formularen er ikke koblet til backend. Erstat action="" med
            jeres endpoint inden go-live.
@@ -557,6 +607,10 @@
              Ejby Industrivej 72, 2600 Glostrup
              Tlf: 44 53 59 59 · info@svaneeng.dk
            ══════════════════════════════════════════════════════════════════ -->
+      <!-- FORMULAR SKJULT MIDLERTIDIGT – AKTIVÉR VED BACKEND-TILSLUTNING
+           Fjern style="display:none" på div'en nedenfor, når backend er klar.
+           Fjern ligeledes mailto-blokken under denne kommentar. -->
+      <div style="display:none;">
       <form
         id="applicationForm"
         class="application-form"
@@ -682,8 +736,82 @@
           <a href="#" onclick="document.getElementById('gdpr-modal').style.display='flex'; return false;">privatlivspolitik</a>.
         </p>
       </form>
+      </div><!-- /formular skjult -->
+
+      <!-- MIDLERTIDIG MAILTO-BLOK – FJERNES NÅR FORMULAR-BACKEND ER KLAR -->
+      <div class="ansoegning-mailto-block">
+        <p>Send en kort ansøgning og evt. CV til <a href="mailto:info@svaneeng.dk?subject=Ans%C3%B8gning" style="color:var(--accent); text-decoration:none; border-bottom:1px solid rgba(155,35,53,0.35);">info@svaneeng.dk</a></p>
+        <p style="margin-top:0.5rem; font-size:0.85rem; color:var(--ink-soft);">Brug gerne emnet: <strong>Ansøgning – [stilling] – [navn] – [by]</strong></p>
+        <a href="mailto:info@svaneeng.dk?subject=Ans%C3%B8gning" class="btn-primary" style="margin-top:1.5rem; display:inline-block;">Send ansøgning →</a>
+        <p style="margin-top:1.5rem; font-size:0.78rem; color:var(--ink-soft); line-height:1.6;">
+          Vi behandler alle ansøgninger seriøst og fortroligt. Se vores
+          <a href="#" onclick="document.getElementById('gdpr-modal').style.display='flex'; return false;" style="color:var(--accent); text-decoration:none;">privatlivspolitik</a>.
+        </p>
+      </div>
     </div>
 
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section id="faq" class="faq-section">
+  <div class="faq-inner reveal">
+    <p class="section-label">Spørgsmål og svar</p>
+    <div class="divider"></div>
+    <h2 class="section-title">Ofte stillede<br><em>spørgsmål</em></h2>
+
+    <div class="faq-list">
+
+      <details class="faq-item">
+        <summary class="faq-question">Arbejder I for private kunder?</summary>
+        <div class="faq-answer">
+          <p>Nej. Vi retter os udelukkende mod erhvervskunder: ejendomsadministratorer, boligforeninger, professionelle bygherrer, rådgivere og ejendomsejere. Vi tager ikke private opgaver.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">Hvilke typer projekter løser I?</summary>
+        <div class="faq-answer">
+          <p>Vi udfører tømrerentrepriser, hovedentrepriser, facaderenovering, tagrenovering, lejlighedsrenovering og løbende service og vedligehold for erhvervskunder. Alle opgaver – store som små – håndteres med de samme krav til planlægning, dokumentation og kommunikation.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">Hvad dækker jeres geografiske arbejdsområde?</summary>
+        <div class="faq-answer">
+          <p>Vi arbejder primært i Storkøbenhavn. Har du et projekt uden for dette område, er du velkommen til at kontakte os – vi vurderer det fra sag til sag.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">Arbejder I i AB 18-regi?</summary>
+        <div class="faq-answer">
+          <p>Ja. Vi er fortrolige med AB 18 og arbejder efter de standarder og procedurer, der følger heraf: skriftlige aftaler, byggemøder, kvalitetssikring, mangelgennemgang og dokumenteret aflevering. Det er vores normale arbejdsform.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">Kan I stå for koordinering af flere fag og underentreprenører?</summary>
+        <div class="faq-answer">
+          <p>Ja. Som hovedentreprenør er netop det vores kerneopgave: at koordinere alle involverede fag, styre tidsplanen og sikre, at alle parter arbejder planmæssigt og i den rigtige rækkefølge. Det kræver struktur og tydelig kommunikation – det er det, vi leverer.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">Hvad sker der på beboede ejendomme?</summary>
+        <div class="faq-answer">
+          <p>Vi har mange års erfaring med at udføre opgaver på beboede ejendomme. Det kræver ekstra planlægning, tydelig kommunikation til beboere og respekt for de hensyn, der gælder i en beboet bygning. Vi koordinerer løbende med ejendomsadministrator og sørger for, at arbejdet forstyrrer mindst muligt.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">Hvordan starter vi et samarbejde?</summary>
+        <div class="faq-answer">
+          <p>Ring til os på <a href="tel:44535959" style="color:var(--accent); text-decoration:none; border-bottom:1px solid rgba(155,35,53,0.3);">44 53 59 59</a> eller send en mail til <a href="mailto:info@svaneeng.dk" style="color:var(--accent); text-decoration:none; border-bottom:1px solid rgba(155,35,53,0.3);">info@svaneeng.dk</a>. Vi er tilgængelige mandag–fredag 07:00–16:00. Fra første samtale sørger vi for, at du hurtigt kan vurdere, om vi er den rette samarbejdspartner til jeres projekt.</p>
+        </div>
+      </details>
+
+    </div>
   </div>
 </section>
 
@@ -729,63 +857,35 @@
       </div>
     </div>
     <div class="reveal">
-      <!-- ── KUNDEKONTAKTFORMULAR (PLACEHOLDER) ──────────────────────────────
-           OBS: Formularen er ikke koblet til backend endnu.
-           Udfyld action="" med jeres backend-endpoint inden go-live.
-           ──────────────────────────────────────────────────────────────── -->
-      <form class="kontakt-form" method="POST" action="" novalidate>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="field-name">Navn</label>
-            <input type="text" id="field-name" name="name" placeholder="Dit fulde navn">
-          </div>
-          <div class="form-group">
-            <label for="field-phone">Telefon</label>
-            <input type="tel" id="field-phone" name="phone" placeholder="+45 00 00 00 00">
-          </div>
+      <!-- ══════════════════════════════════════════════════════════════════════
+           KONTAKTFORMULAR – BACKEND-INTEGRATION IKKE KOBLET ENDNU
+           ══════════════════════════════════════════════════════════════════════
+           STATUS: Formularen er ikke koblet til backend og vises derfor ikke.
+           Erstat denne blok med den fulde formular, når backend er klar.
+
+           VED BACKEND-INTEGRATION skal henvendelser sendes til info@svaneeng.dk.
+           Backend/formularservice skal kunne:
+           – Modtage alle formularfelter via POST
+           – Sende intern notifikationsmail til info@svaneeng.dk
+           – Sende kvitteringsmail til afsenders e-mail
+           – Håndtere fejl korrekt: brugeren må IKKE få succesbesked,
+             hvis mailen ikke er afsendt
+           – Hidden fields (internal_recipient, email_subject_template) må IKKE
+             bruges som sikker routing-kilde – konfigurér disse server-side
+
+           FELTER DER SKAL INDGÅ (name-attributter):
+           name, phone, email, company, project_type, location, timeframe, message
+           ══════════════════════════════════════════════════════════════════ -->
+      <div class="kontakt-mailto-block">
+        <p>Ring til os direkte eller send en mail, så vender vi tilbage hurtigst muligt.</p>
+        <div class="kontakt-mailto-actions">
+          <a href="tel:44535959" class="btn-primary">Ring: 44 53 59 59</a>
+          <a href="mailto:info@svaneeng.dk?subject=Henvendelse%20fra%20hjemmesiden" class="btn-ghost">Send mail →</a>
         </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="field-email">E-mail</label>
-            <input type="email" id="field-email" name="email" placeholder="din@email.dk">
-          </div>
-          <div class="form-group">
-            <label for="field-company">Virksomhed / Organisation</label>
-            <input type="text" id="field-company" name="company" placeholder="Navn på virksomhed eller forening">
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="field-project-type">Projekttype</label>
-          <select id="field-project-type" name="project_type">
-            <option value="">Vælg en kategori</option>
-            <option value="hovedentreprise">Hovedentreprise</option>
-            <option value="toemmererentreprise">Tømrerentreprise</option>
-            <option value="facaderenovering">Facaderenovering</option>
-            <option value="tagrenovering">Tagrenovering</option>
-            <option value="lejlighedsrenovering">Lejlighedsrenovering</option>
-            <option value="service">Service & løbende vedligehold</option>
-            <option value="andet">Andet</option>
-          </select>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="field-location">Projektets placering</label>
-            <input type="text" id="field-location" name="location" placeholder="Adresse eller område">
-          </div>
-          <div class="form-group">
-            <label for="field-timeframe">Ønsket tidsramme</label>
-            <input type="text" id="field-timeframe" name="timeframe" placeholder="fx Q3 2025 eller snarest muligt">
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="field-message">Besked</label>
-          <textarea id="field-message" name="message" placeholder="Beskriv kort opgavens omfang og hvad du ønsker hjælp til…"></textarea>
-        </div>
-        <button class="form-submit" type="submit">Send besked →</button>
-        <p style="margin-top:1rem; font-size:0.78rem; color:var(--ink-soft); line-height:1.6;">
+        <p style="margin-top:1.5rem; font-size:0.78rem; color:var(--ink-soft); line-height:1.6;">
           Vi behandler alle henvendelser fortroligt og vender tilbage hurtigst muligt.
         </p>
-      </form>
+      </div>
     </div>
   </div>
 </section>
@@ -811,7 +911,7 @@
     <a href="#kontakt">Kontakt</a>
     <a href="#" onclick="document.getElementById('gdpr-modal').style.display='flex'; return false;">Privatlivspolitik</a>
   </div>
-  <div class="footer-copy">CVR: 31943485 · © 2025 Svaneeng A/S</div>
+  <div class="footer-copy">CVR: 31943485 · © 2026 Svaneeng A/S</div>
 </footer>
 
 <!-- ── GDPR PRIVATLIVSPOLITIK MODAL ── -->
@@ -823,82 +923,4 @@
     <p style="font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; color:#9B2335; margin-bottom:0.75rem;">Svaneeng A/S</p>
     <h2 style="font-family:var(--font-head); font-size:2rem; font-weight:300; margin-bottom:0.5rem; line-height:1.2;">Privatlivspolitik</h2>
     <p style="color:#6B6860; margin-bottom:2rem; font-size:0.82rem;">Gælder for ansøgere og øvrige kontaktpersoner · Senest opdateret: april 2025</p>
-    <hr style="border:none; border-top:1px solid #D9D5CE; margin-bottom:2rem;">
-
-    <h3 style="font-size:0.95rem; font-weight:500; margin-bottom:0.5rem;">1. Dataansvarlig</h3>
-    <p style="color:#6B6860; margin-bottom:1.5rem;">
-      Svaneeng A/S<br>
-      Ejby Industrivej 72, 2600 Glostrup<br>
-      CVR-nr.: 31943485<br>
-      Telefon: 44 53 59 59<br>
-      E-mail: info@svaneeng.dk
-    </p>
-
-    <h3 style="font-size:0.95rem; font-weight:500; margin-bottom:0.5rem;">2. Hvilke personoplysninger indsamler vi?</h3>
-    <p style="color:#6B6860; margin-bottom:0.75rem;">Når du sender en ansøgning eller tager kontakt til os, kan vi indsamle følgende oplysninger:</p>
-    <ul style="color:#6B6860; padding-left:1.25rem; margin-bottom:1.5rem;">
-      <li>Navn, adresse, telefonnummer og e-mailadresse</li>
-      <li>CV, ansøgning og eventuelle referencer</li>
-      <li>Uddannelses- og erhvervsmæssig baggrund</li>
-      <li>Oplysninger du selv vælger at oplyse i din ansøgning</li>
-    </ul>
-    <p style="color:#6B6860; margin-bottom:1.5rem;">Vi indsamler ikke følsomme personoplysninger (fx helbredsoplysninger, politisk overbevisning e.l.) med mindre du selv vælger at oplyse disse.</p>
-
-    <h3 style="font-size:0.95rem; font-weight:500; margin-bottom:0.5rem;">3. Formål og retsgrundlag</h3>
-    <p style="color:#6B6860; margin-bottom:0.75rem;">Dine personoplysninger behandles udelukkende med henblik på:</p>
-    <ul style="color:#6B6860; padding-left:1.25rem; margin-bottom:0.75rem;">
-      <li>Vurdering og behandling af din ansøgning (retsgrundlag: GDPR art. 6(1)(b))</li>
-      <li>Kontakt i forbindelse med rekrutteringsprocessen (retsgrundlag: GDPR art. 6(1)(b))</li>
-      <li>Opbevaring med henblik på fremtidige relevante stillinger – kun med dit udtrykkelige samtykke (retsgrundlag: GDPR art. 6(1)(a))</li>
-    </ul>
-    <p style="color:#6B6860; margin-bottom:1.5rem;">Vi behandler ikke dine oplysninger til andre formål uden at indhente nyt retsgrundlag.</p>
-
-    <h3 style="font-size:0.95rem; font-weight:500; margin-bottom:0.5rem;">4. Opbevaringsperiode</h3>
-    <p style="color:#6B6860; margin-bottom:1.5rem;">
-      Ansøgninger fra ansøgere, der ikke tilbydes ansættelse, slettes senest <strong>6 måneder</strong> efter afslutning af rekrutteringsprocessen, medmindre du har givet samtykke til længere opbevaring. Ansøgere, der ønsker at blive i vores kandidatkartotek med henblik på fremtidige stillinger, kan give eksplicit samtykke hertil – og tilbagekalde det til enhver tid.
-    </p>
-
-    <h3 style="font-size:0.95rem; font-weight:500; margin-bottom:0.5rem;">5. Videregivelse af oplysninger</h3>
-    <p style="color:#6B6860; margin-bottom:1.5rem;">
-      Dine personoplysninger videregives ikke til tredjepart uden dit samtykke. Vi anvender ikke databehandlere uden for EU/EØS. Oplysningerne deles ikke med annoncører, rekrutteringsbureauer eller andre eksterne parter uden udtrykkelig aftale herom.
-    </p>
-
-    <h3 style="font-size:0.95rem; font-weight:500; margin-bottom:0.5rem;">6. Sikkerhed</h3>
-    <p style="color:#6B6860; margin-bottom:1.5rem;">
-      Svaneeng A/S træffer passende tekniske og organisatoriske foranstaltninger for at beskytte dine personoplysninger mod utilsigtet eller ulovlig adgang, tab, ændring eller videregivelse. Adgangen til dine oplysninger er begrænset til de medarbejdere, der har et sagligt behov herfor.
-    </p>
-
-    <h3 style="font-size:0.95rem; font-weight:500; margin-bottom:0.5rem;">7. Dine rettigheder</h3>
-    <p style="color:#6B6860; margin-bottom:0.75rem;">I henhold til GDPR har du ret til:</p>
-    <ul style="color:#6B6860; padding-left:1.25rem; margin-bottom:0.75rem;">
-      <li><strong>Indsigt</strong> – du kan anmode om indsigt i de oplysninger vi behandler om dig</li>
-      <li><strong>Berigtigelse</strong> – du kan anmode om rettelse af urigtige oplysninger</li>
-      <li><strong>Sletning</strong> – du kan anmode om sletning af dine oplysninger ("retten til at blive glemt")</li>
-      <li><strong>Begrænsning</strong> – du kan anmode om begrænsning af behandlingen</li>
-      <li><strong>Dataportabilitet</strong> – du kan anmode om at modtage dine oplysninger i et struktureret, alment anvendt format</li>
-      <li><strong>Indsigelse</strong> – du kan gøre indsigelse mod behandlingen af dine oplysninger</li>
-      <li><strong>Tilbagekaldelse af samtykke</strong> – du kan til enhver tid tilbagekalde et givet samtykke uden at dette påvirker lovligheden af behandling foretaget inden tilbagekaldelsen</li>
-    </ul>
-    <p style="color:#6B6860; margin-bottom:1.5rem;">For at gøre brug af dine rettigheder bedes du kontakte os på info@svaneeng.dk eller tlf. 44 53 59 59.</p>
-
-    <h3 style="font-size:0.95rem; font-weight:500; margin-bottom:0.5rem;">8. Klage</h3>
-    <p style="color:#6B6860; margin-bottom:2rem;">
-      Hvis du mener, at vi behandler dine personoplysninger i strid med gældende databeskyttelseslovgivning, har du ret til at indgive klage til <strong>Datatilsynet</strong>:<br>
-      Carl Jacobsens Vej 35, 2500 Valby · dt@datatilsynet.dk · www.datatilsynet.dk
-    </p>
-
-    <hr style="border:none; border-top:1px solid #D9D5CE; margin-bottom:1.5rem;">
-    <p style="font-size:0.78rem; color:#9B9590;">Svaneeng A/S · CVR 31943485 · Ejby Industrivej 72, 2600 Glostrup</p>
-    
-    <button onclick="document.getElementById('gdpr-modal').style.display='none'"
-      style="margin-top:1.5rem; padding:0.75rem 2rem; background:#9B2335; color:#fff; border:none; border-radius:2px; font-family:var(--font-body); font-size:0.82rem; letter-spacing:0.1em; text-transform:uppercase; cursor:pointer;">
-      Luk ✕
-    </button>
-  </div>
-</div>
-
-<!-- jobs.js loades FØR main.js, da main.js's scroll-reveal gælder hele siden -->
-<script src="assets/js/jobs.js"></script>
-<script src="assets/js/main.js"></script>
-</body>
-</html>
+    <hr style="border:none; border-top:1px solid 

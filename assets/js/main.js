@@ -61,30 +61,28 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // ── GDPR MODAL – LUK VED BACKDROP-KLIK ───────────────────────
-  const gdprModal = document.getElementById('gdpr-modal');
-  if (gdprModal) {
-    gdprModal.addEventListener('click', function (e) {
-      if (e.target === this) this.style.display = 'none';
-    });
-  }
+  // ── AKTIV NAV-HIGHLIGHT ──────────────────────────────────────
+  // Sektioner der svarer til nav-links
+  const navSections = ['om-os', 'ydelser', 'proces', 'referencer', 'karriere'];
+  const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
 
-  // ── KONTAKTFORMULAR (PLACEHOLDER – BACKEND IKKE KOBLET) ───────
-  // OBS: Formularen er ikke koblet til en rigtig backend endnu.
-  // Erstat action="" på <form class="kontakt-form"> og håndter submit
-  // med et fetch/POST-kald til jeres backend-endpoint inden go-live.
-  const kontaktForm = document.querySelector('form.kontakt-form');
-  if (kontaktForm) {
-    kontaktForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const name  = document.getElementById('field-name')?.value?.trim();
-      const email = document.getElementById('field-email')?.value?.trim();
-      if (!name || !email) {
-        alert('Udfyld venligst navn og e-mail.');
-        return;
+  const sectionObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        navLinks.forEach(function (link) {
+          link.classList.toggle('nav-active', link.getAttribute('href') === '#' + id);
+        });
       }
-      alert('Tak for din henvendelse, ' + name + '!\nVi vender tilbage hurtigst muligt.');
     });
-  }
+  }, { rootMargin: '-30% 0px -60% 0px', threshold: 0 });
 
-});
+  navSections.forEach(function (id) {
+    const el = document.getElementById(id);
+    if (el) sectionObserver.observe(el);
+  });
+
+  // ── BACK-TO-TOP ──────────────────────────────────────────────
+  const backTop = document.getElementById('back-to-top');
+  if (backTop) {
+    window.addEventListener('scroll', functio

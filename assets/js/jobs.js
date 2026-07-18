@@ -60,6 +60,9 @@ function renderJobs(jobs) {
     grid.innerHTML = '<div class="jobs-empty"><strong style="display:block;margin-bottom:0.5rem;">Ingen aktive opslag i øjeblikket</strong>Du er altid velkommen til at sende en uopfordret ansøgning – skriv til <a href="mailto:info@svaneeng.dk" style="color:var(--accent);">info@svaneeng.dk</a> eller brug formularen nedenfor.</div>';
     return;
   }
+  const pageUrl = 'https://www.svaneeng.dk/#ledige-stillinger';
+  const pageUrlEncoded = encodeURIComponent(pageUrl);
+
   grid.innerHTML = active.map(job => `
     <div class="job-card">
       <div class="job-card-header">
@@ -74,6 +77,17 @@ function renderJobs(jobs) {
         <button class="job-btn-details" data-job-id="${job.id}">Læs mere</button>
         <button class="job-btn-apply" data-job-id="${job.id}" data-job-title="${job.title}">Ansøg stillingen →</button>
       </div>
+      <div class="job-share">
+        <span class="job-share-label">Del opslag:</span>
+        <a class="job-share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=${pageUrlEncoded}" target="_blank" rel="noopener noreferrer" aria-label="Del på LinkedIn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.26 2.36 4.26 5.43v6.31zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          LinkedIn
+        </a>
+        <button class="job-share-btn job-share-copy" data-title="${job.title}" aria-label="Kopiér link">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Kopiér link
+        </button>
+      </div>
     </div>
   `).join('');
 
@@ -83,6 +97,20 @@ function renderJobs(jobs) {
   });
   grid.querySelectorAll('.job-btn-apply').forEach(btn => {
     btn.addEventListener('click', () => applyForJob(btn.dataset.jobTitle));
+  });
+
+  // Kopiér link
+  grid.querySelectorAll('.job-share-copy').forEach(btn => {
+    btn.addEventListener('click', function () {
+      const url = pageUrl;
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(url).then(() => {
+          const orig = btn.innerHTML;
+          btn.textContent = 'Kopieret!';
+          setTimeout(() => { btn.innerHTML = orig; }, 2000);
+        });
+      }
+    });
   });
 }
 
@@ -229,48 +257,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
       if (!name || !email) {
         alert('Udfyld venligst navn og e-mail.');
-        return;
-      }
-
-      // CV-validering trin 1 – er CV obligatorisk for denne stilling?
-      const cvInput    = document.getElementById('applicant_cv');
-      const cvIsRequired = cvInput && cvInput.getAttribute('data-cv-required') === 'true';
-      const cvHasFile    = cvInput && cvInput.files && cvInput.files.length > 0;
-
-      if (cvIsRequired && !cvHasFile) {
-        const stillingLabel = position || 'denne stilling';
-        alert('Ved ansøgning som ' + stillingLabel + ' skal du vedhæfte CV.');
-        cvInput.focus();
-        return;
-      }
-
-      // CV-validering trin 2 – filtype og størrelse (kun hvis fil er valgt)
-      if (cvHasFile) {
-        const file = cvInput.files[0];
-        const allowedTypes = [
-          'application/pdf',
-          'application/msword',
-          'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
-        ];
-        const allowedExts = /\.(pdf|doc|docx)$/i;
-        const maxSize = 10 * 1024 * 1024; // 10 MB
-        if (!allowedTypes.includes(file.type) && !allowedExts.test(file.name)) {
-          alert('Kun PDF, DOC eller DOCX er tilladt som CV/bilag.');
-          return;
-        }
-        if (file.size > maxSize) {
-          alert('Filen er for stor. Maks. tilladt størrelse er 10 MB.');
-          return;
-        }
-      }
-
-      // Byg mailemne til reference (bruges af backend – se kommentar ved hidden fields)
-      const subject = buildEmailSubject(name, position, address);
-      console.info('[Svaneeng] Beregnet mailemne (til backend-reference):', subject);
-
-      // PLACEHOLDER: Ingen reel afsendelse – vis bekræftelse
-      alert('Tak for din ansøgning, ' + name + '!\nVi vender tilbage hurtigst muligt.');
-    });
-  }
-
-});
+    

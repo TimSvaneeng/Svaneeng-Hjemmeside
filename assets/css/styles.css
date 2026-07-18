@@ -898,3 +898,29 @@ footer {
   .job-btn-details, .job-btn-apply { text-align: center; }
   .job-modal-inner { padding: 2rem 1.5rem; }
 }
+
+/* ── JOB SHARE ── */
+.job-share {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--line);
+}
+.job-share-label {
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  letter-spacing: 0.04em;
+}
+.job-share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  font-family: var(--font-body);
+  color: var(--ink-soft);
+  background: none;
+  border: 1px solid var(--line);
+  border-rad
