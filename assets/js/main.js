@@ -119,4 +119,44 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // ── BYGHERRENS OVERBLIK – TAB-SKIFT + KEYBOARD NAVIGATION ──
+  var byghTabs = Array.from(document.querySelectorAll('.bygherre-tab-btn'));
+
+  function activateTab(btn) {
+    byghTabs.forEach(function (b) {
+      b.classList.remove('active');
+      b.setAttribute('aria-selected', 'false');
+      b.setAttribute('tabindex', '-1');
+    });
+    document.querySelectorAll('.bygherre-panel').forEach(function (p) {
+      p.classList.remove('active');
+    });
+    btn.classList.add('active');
+    btn.setAttribute('aria-selected', 'true');
+    btn.setAttribute('tabindex', '0');
+    var panel = document.getElementById('panel-' + btn.dataset.tab);
+    if (panel) panel.classList.add('active');
+  }
+
+  byghTabs.forEach(function (btn, i) {
+    btn.setAttribute('tabindex', btn.classList.contains('active') ? '0' : '-1');
+
+    btn.addEventListener('click', function () {
+      activateTab(this);
+    });
+
+    btn.addEventListener('keydown', function (e) {
+      var cur = byghTabs.indexOf(document.querySelector('.bygherre-tab-btn.active'));
+      var next;
+      if      (e.key === 'ArrowRight') { next = (cur + 1) % byghTabs.length; }
+      else if (e.key === 'ArrowLeft')  { next = (cur - 1 + byghTabs.length) % byghTabs.length; }
+      else if (e.key === 'Home')       { next = 0; }
+      else if (e.key === 'End')        { next = byghTabs.length - 1; }
+      else { return; }
+      e.preventDefault();
+      activateTab(byghTabs[next]);
+      byghTabs[next].focus();
+    });
+  });
+
 });
