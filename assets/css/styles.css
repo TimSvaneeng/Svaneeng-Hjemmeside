@@ -939,6 +939,12 @@ footer {
   max-width: 560px;
   line-height: 1.7;
 }
+.bygherre-tabs {
+  min-height: 420px; /* Forebygger layout-hop ved tabskift på desktop */
+}
+@media (max-width: 640px) {
+  .bygherre-tabs { min-height: 0; } /* Reset på mobil – kolonner stables, høj variabel */
+}
 .bygherre-tab-buttons {
   display: flex;
   gap: 0;
