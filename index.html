@@ -886,4 +886,214 @@
         </div>
       </details>
 
-      <details class="faq-i
+      <details class="faq-item">
+        <summary class="faq-question">Hvad sker der på beboede ejendomme?</summary>
+        <div class="faq-answer">
+          <p>Vi har mange års erfaring med at udføre opgaver på beboede ejendomme. Det kræver ekstra planlægning, tydelig kommunikation til beboere og respekt for de hensyn, der gælder i en beboet bygning. Vi koordinerer løbende med ejendomsadministrator og sørger for, at arbejdet forstyrrer mindst muligt.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">Hvordan starter vi et samarbejde?</summary>
+        <div class="faq-answer">
+          <p>Ring til os på <a href="tel:44535959" style="color:var(--accent); text-decoration:none; border-bottom:1px solid rgba(155,35,53,0.3);">44 53 59 59</a> eller send en mail til <a href="mailto:info@svaneeng.dk" style="color:var(--accent); text-decoration:none; border-bottom:1px solid rgba(155,35,53,0.3);">info@svaneeng.dk</a>. Vi er tilgængelige mandag–fredag 07:00–16:00. Fra første samtale sørger vi for, at du hurtigt kan vurdere, om vi er den rette samarbejdspartner til jeres projekt.</p>
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── KONTAKT ── -->
+<section id="kontakt">
+  <div class="kontakt-inner">
+    <div class="reveal">
+      <p class="section-label">Kontakt os</p>
+      <div class="divider"></div>
+      <h2 class="section-title">Kontakt os om<br><em>jeres næste projekt</em></h2>
+      <div class="kontakt-info">
+        <p>Vi retter os udelukkende mod erhvervskunder – bygherrer, ejendomsadministratorer, rådgivere og boligforeninger. Har du et projekt i tankerne, ønsker du et tilbud, eller vil du blot afstemme om vi er den rette samarbejdspartner? Ring direkte eller send os en mail.</p>
+      </div>
+      <div class="kontakt-details">
+        <div class="kontakt-detail">
+          <div class="detail-icon">📍</div>
+          <div class="detail-text">
+            <strong>Adresse</strong>
+            <span>Ejby Industrivej 72, 2600 Glostrup</span>
+          </div>
+        </div>
+        <div class="kontakt-detail">
+          <div class="detail-icon">📞</div>
+          <div class="detail-text">
+            <strong>Telefon</strong>
+            <span>44 53 59 59</span>
+          </div>
+        </div>
+        <div class="kontakt-detail">
+          <div class="detail-icon">✉</div>
+          <div class="detail-text">
+            <strong>E-mail</strong>
+            <span>info@svaneeng.dk</span>
+          </div>
+        </div>
+        <div class="kontakt-detail">
+          <div class="detail-icon">🕐</div>
+          <div class="detail-text">
+            <strong>Åbningstider</strong>
+            <span>Mandag–fredag: 07:00–16:00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal">
+      <!-- ══════════════════════════════════════════════════════════════════════
+           KONTAKTFORMULAR – BACKEND-INTEGRATION IKKE KOBLET ENDNU
+           ══════════════════════════════════════════════════════════════════════
+           STATUS: Formularen er ikke koblet til backend og vises derfor ikke.
+           Erstat denne blok med den fulde formular, når backend er klar.
+
+           VED BACKEND-INTEGRATION skal henvendelser sendes til info@svaneeng.dk.
+           Backend/formularservice skal kunne:
+           – Modtage alle formularfelter via POST
+           – Sende intern notifikationsmail til info@svaneeng.dk
+           – Sende kvitteringsmail til afsenders e-mail
+           – Håndtere fejl korrekt: brugeren må IKKE få succesbesked,
+             hvis mailen ikke er afsendt
+           – Hidden fields (internal_recipient, email_subject_template) må IKKE
+             bruges som sikker routing-kilde – konfigurér disse server-side
+
+           FELTER DER SKAL INDGÅ (name-attributter):
+           name, phone, email, company, project_type, location, timeframe, message
+           ══════════════════════════════════════════════════════════════════ -->
+      <div class="kontakt-mailto-block">
+        <p>Ring til os direkte eller send en mail, så vender vi tilbage hurtigst muligt.</p>
+        <div class="kontakt-mailto-actions">
+          <a href="tel:44535959" class="btn-primary">Ring: 44 53 59 59</a>
+          <a href="mailto:info@svaneeng.dk?subject=Henvendelse%20fra%20hjemmesiden" class="btn-ghost">Send mail →</a>
+        </div>
+        <p style="margin-top:1.5rem; font-size:0.78rem; color:var(--ink-soft); line-height:1.6;">
+          Vi behandler alle henvendelser fortroligt og vender tilbage hurtigst muligt.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <!-- Logo hvid: Placer filen assets/logo/svaneeng-logo-white.png inden go-live (anbefalet: 280×74 px, hvid) -->
+  <div class="footer-logo">
+    <img src="assets/logo/svaneeng-logo-white.png"
+         alt="Svaneeng A/S"
+         width="140"
+         height="37"
+         style="height:37px; width:auto; display:block; filter: brightness(0) invert(1);">
+  </div>
+  <div class="footer-links">
+    <a href="#om-os">Om os</a>
+    <a href="#hvem-vi-arbejder-for">Hvem vi arbejder for</a>
+    <a href="#ydelser">Ydelser</a>
+    <a href="#proces">Proces</a>
+    <a href="#bygherre-overblik">Bygherrens overblik</a>
+    <a href="#referencer">Referencer</a>
+    <a href="#karriere">Karriere</a>
+    <a href="#ledige-stillinger">Ledige stillinger</a>
+    <a href="#ansoegning">Ansøgning</a>
+    <a href="#faq">FAQ</a>
+    <a href="#kontakt">Kontakt</a>
+    <a href="#" onclick="document.getElementById('gdpr-modal').style.display='flex'; return false;">Privatlivspolitik</a>
+  </div>
+  <div class="footer-copy">CVR: 31943485 · © 2026 Svaneeng A/S</div>
+</footer>
+
+<!-- ── GDPR PRIVATLIVSPOLITIK MODAL ── -->
+<div id="gdpr-modal" style="display:none; position:fixed; inset:0; z-index:999; background:rgba(0,0,0,0.6); align-items:center; justify-content:center; padding:1.5rem;">
+  <div style="background:#fff; max-width:720px; width:100%; max-height:90vh; overflow-y:auto; border-radius:4px; padding:3rem; position:relative; font-family:var(--font-body); font-size:0.9rem; line-height:1.75; color:#18181B;">
+    <button onclick="document.getElementById('gdpr-modal').style.display='none'" 
+      style="position:absolute; top:1.5rem; right:1.5rem; background:none; border:none; font-size:1.4rem; cursor:pointer; color:#6B6860; line-height:1;">✕</button>
+    
+    <p style="font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; color:#9B2335; margin-bottom:0.75rem;">Svaneeng A/S</p>
+    <h2 style="font-family:var(--font-head); font-size:2rem; font-weight:300; margin-bottom:0.5rem; line-height:1.2;">Privatlivspolitik</h2>
+    <p style="color:#6B6860; margin-bottom:2rem; font-size:0.82rem;">Gælder for ansøgere og øvrige kontaktpersoner · Senest opdateret: april 2025</p>
+    <hr style="border:none; border-top:1px solid #D9D5CE; margin-bottom:2rem;">
+
+    <h3 style="font-size:0.95rem; font-weight:500; margin-bottom:0.5rem;">1. Dataansvarlig</h3>
+    <p style="color:#6B6860; margin-bottom:1.5rem;">
+      Svaneeng A/S<br>
+      Ejby Industrivej 72, 2600 Glostrup<br>
+      CVR-nr.: 31943485<br>
+      Telefon: 44 53 59 59<br>
+      E-mail: info@svaneeng.dk
+    </p>
+
+    <h3 style="font-size:0.95rem; font-weight:500; margin-bottom:0.5rem;">2. Hvilke personoplysninger indsamler vi?</h3>
+    <p style="color:#6B6860; margin-bottom:0.75rem;">Når du sender en ansøgning eller tager kontakt til os, kan vi indsamle følgende oplysninger:</p>
+    <ul style="color:#6B6860; padding-left:1.25rem; margin-bottom:1.5rem;">
+      <li>Navn, adresse, telefonnummer og e-mailadresse</li>
+      <li>CV, ansøgning og eventuelle referencer</li>
+      <li>Uddannelses- og erhvervsmæssig baggrund</li>
+      <li>Oplysninger du selv vælger at oplyse i din ansøgning</li>
+    </ul>
+    <p style="color:#6B6860; margin-bottom:1.5rem;">Vi indsamler ikke følsomme personoplysninger (fx helbredsoplysninger, politisk overbevisning e.l.) med mindre du selv vælger at oplyse disse.</p>
+
+    <h3 style="font-size:0.95rem; font-weight:500; margin-bottom:0.5rem;">3. Formål og retsgrundlag</h3>
+    <p style="color:#6B6860; margin-bottom:0.75rem;">Dine personoplysninger behandles udelukkende med henblik på:</p>
+    <ul style="color:#6B6860; padding-left:1.25rem; margin-bottom:0.75rem;">
+      <li>Vurdering og behandling af din ansøgning (retsgrundlag: GDPR art. 6(1)(b))</li>
+      <li>Kontakt i forbindelse med rekrutteringsprocessen (retsgrundlag: GDPR art. 6(1)(b))</li>
+      <li>Opbevaring med henblik på fremtidige relevante stillinger – kun med dit udtrykkelige samtykke (retsgrundlag: GDPR art. 6(1)(a))</li>
+    </ul>
+    <p style="color:#6B6860; margin-bottom:1.5rem;">Vi behandler ikke dine oplysninger til andre formål uden at indhente nyt retsgrundlag.</p>
+
+    <h3 style="font-size:0.95rem; font-weight:500; margin-bottom:0.5rem;">4. Opbevaringsperiode</h3>
+    <p style="color:#6B6860; margin-bottom:1.5rem;">
+      Ansøgninger fra ansøgere, der ikke tilbydes ansættelse, slettes senest <strong>6 måneder</strong> efter afslutning af rekrutteringsprocessen, medmindre du har givet samtykke til længere opbevaring. Ansøgere, der ønsker at blive i vores kandidatkartotek med henblik på fremtidige stillinger, kan give eksplicit samtykke hertil – og tilbagekalde det til enhver tid.
+    </p>
+
+    <h3 style="font-size:0.95rem; font-weight:500; margin-bottom:0.5rem;">5. Videregivelse af oplysninger</h3>
+    <p style="color:#6B6860; margin-bottom:1.5rem;">
+      Dine personoplysninger videregives ikke til tredjepart uden dit samtykke. Vi anvender ikke databehandlere uden for EU/EØS. Oplysningerne deles ikke med annoncører, rekrutteringsbureauer eller andre eksterne parter uden udtrykkelig aftale herom.
+    </p>
+
+    <h3 style="font-size:0.95rem; font-weight:500; margin-bottom:0.5rem;">6. Sikkerhed</h3>
+    <p style="color:#6B6860; margin-bottom:1.5rem;">
+      Svaneeng A/S træffer passende tekniske og organisatoriske foranstaltninger for at beskytte dine personoplysninger mod utilsigtet eller ulovlig adgang, tab, ændring eller videregivelse. Adgangen til dine oplysninger er begrænset til de medarbejdere, der har et sagligt behov herfor.
+    </p>
+
+    <h3 style="font-size:0.95rem; font-weight:500; margin-bottom:0.5rem;">7. Dine rettigheder</h3>
+    <p style="color:#6B6860; margin-bottom:0.75rem;">I henhold til GDPR har du ret til:</p>
+    <ul style="color:#6B6860; padding-left:1.25rem; margin-bottom:0.75rem;">
+      <li><strong>Indsigt</strong> – du kan anmode om indsigt i de oplysninger vi behandler om dig</li>
+      <li><strong>Berigtigelse</strong> – du kan anmode om rettelse af urigtige oplysninger</li>
+      <li><strong>Sletning</strong> – du kan anmode om sletning af dine oplysninger ("retten til at blive glemt")</li>
+      <li><strong>Begrænsning</strong> – du kan anmode om begrænsning af behandlingen</li>
+      <li><strong>Dataportabilitet</strong> – du kan anmode om at modtage dine oplysninger i et struktureret, alment anvendt format</li>
+      <li><strong>Indsigelse</strong> – du kan gøre indsigelse mod behandlingen af dine oplysninger</li>
+      <li><strong>Tilbagekaldelse af samtykke</strong> – du kan til enhver tid tilbagekalde et givet samtykke uden at dette påvirker lovligheden af behandling foretaget inden tilbagekaldelsen</li>
+    </ul>
+    <p style="color:#6B6860; margin-bottom:1.5rem;">For at gøre brug af dine rettigheder bedes du kontakte os på info@svaneeng.dk eller tlf. 44 53 59 59.</p>
+
+    <h3 style="font-size:0.95rem; font-weight:500; margin-bottom:0.5rem;">8. Klage</h3>
+    <p style="color:#6B6860; margin-bottom:2rem;">
+      Hvis du mener, at vi behandler dine personoplysninger i strid med gældende databeskyttelseslovgivning, har du ret til at indgive klage til <strong>Datatilsynet</strong>:<br>
+      Carl Jacobsens Vej 35, 2500 Valby · dt@datatilsynet.dk · www.datatilsynet.dk
+    </p>
+
+    <hr style="border:none; border-top:1px solid #D9D5CE; margin-bottom:1.5rem;">
+    <p style="font-size:0.78rem; color:#9B9590;">Svaneeng A/S · CVR 31943485 · Ejby Industrivej 72, 2600 Glostrup</p>
+    
+    <button onclick="document.getElementById('gdpr-modal').style.display='none'"
+      style="margin-top:1.5rem; padding:0.75rem 2rem; background:#9B2335; color:#fff; border:none; border-radius:2px; font-family:var(--font-body); font-size:0.82rem; letter-spacing:0.1em; text-transform:uppercase; cursor:pointer;">
+      Luk ✕
+    </button>
+  </div>
+</div>
+
+<!-- ── BACK-TO-TOP ── -->
+<button id="back-to-top" aria-label="Tilbage til toppen">↑</button>
+
+<!-- jobs.js loades FØR main.js, da main.js's scroll-reveal gælder hele siden -->
+<script src="assets/js/jobs.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
