@@ -940,7 +940,7 @@ footer {
   line-height: 1.7;
 }
 .bygherre-tabs {
-  min-height: 420px; /* Forebygger layout-hop ved tabskift på desktop */
+  min-height: 480px; /* Forebygger layout-hop ved tabskift på desktop */
 }
 @media (max-width: 640px) {
   .bygherre-tabs { min-height: 0; } /* Reset på mobil – kolonner stables, høj variabel */
@@ -982,10 +982,47 @@ footer {
 }
 .bygherre-panel-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  grid-template-areas:
+    "media copy"
+    "media practice";
+  grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.35fr);
+  gap: 2.5rem 4rem;
   align-items: start;
 }
+.bygherre-panel-img {
+  grid-area: media;
+  width: 100%;
+  min-height: 340px;
+  overflow: hidden;
+  border-radius: 2px;
+  position: relative;
+}
+.bygherre-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  position: absolute;
+  inset: 0;
+}
+.bygherre-img-placeholder {
+  background: var(--bg-alt);
+  border: 1px dashed var(--line);
+}
+.bygherre-img-placeholder::after {
+  content: 'Billede indsættes';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+.bygherre-panel-text { grid-area: copy; }
+.bygherre-panel-example { grid-area: practice; }
 .bygherre-panel-heading {
   font-family: var(--font-head);
   font-size: 1.5rem;
@@ -1027,8 +1064,16 @@ footer {
 }
 @media (max-width: 1024px) {
   .bygherre-panel-content {
+    grid-template-areas:
+      "media"
+      "copy"
+      "practice";
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+  .bygherre-panel-img {
+    min-height: 240px;
+    position: relative;
   }
   .bygherre-tab-btn {
     padding: 0.75rem 1.1rem;
