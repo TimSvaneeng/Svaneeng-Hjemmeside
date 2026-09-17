@@ -707,7 +707,6 @@
       <div class="divider"></div>
       <h2 class="section-title">Arbejde vi er<br><em>stolte af</em></h2>
     </div>
-    <a href="#kontakt" class="btn-ghost">Se alle projekter →</a>
   </div>
   <div class="ref-grid reveal">
     <div class="ref-card">
@@ -752,7 +751,7 @@
     <p>
       Svaneeng A/S søger løbende dygtige tømrere, svende og projektledere til vores entreprise- og serviceafdeling. Vi tilbyder varierede og spændende erhvervsopgaver, et stærkt fagligt miljø og god plads til at vokse med ansvaret.
     </p>
-    <a href="#kontakt" class="btn-primary">Send en uopfordret ansøgning</a>
+    <a href="#kontakt" class="btn-primary" id="btn-ansogning">Send en uopfordret ansøgning</a>
   </div>
   <div class="reveal">
     <p style="font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.45); margin-bottom:1rem;">Vi søger i øjeblikket</p>
@@ -878,6 +877,7 @@
             <option value="">Vælg en kategori</option>
             <option>Hovedentreprise</option>
             <option>Tømrerentreprise</option>
+            <option value="jobansogning">Jobansøgning / Uopfordret ansøgning</option>
             <option>Facaderenovering</option>
             <option>Tagrenovering</option>
             <option>Lejlighedsrenovering</option>
@@ -970,6 +970,25 @@
   if (gdprModal) {
     gdprModal.addEventListener('click', function(e) {
       if (e.target === this) this.style.display = 'none';
+    });
+  }
+
+
+  // Uopfordret ansøgning → forvælg jobansøgning i dropdown
+  const btnAnsogning = document.getElementById('btn-ansogning');
+  if (btnAnsogning) {
+    btnAnsogning.addEventListener('click', function() {
+      setTimeout(() => {
+        const select = document.querySelector('.kontakt-form select');
+        if (select) {
+          select.value = 'jobansogning';
+          select.dispatchEvent(new Event('change'));
+        }
+        const besked = document.querySelector('.kontakt-form textarea');
+        if (besked && !besked.value) {
+          besked.placeholder = 'Fortæl os kort om dig selv – erfaring, stilling du søger og hvornår du kan starte…';
+        }
+      }, 600);
     });
   }
 
