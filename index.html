@@ -856,24 +856,26 @@
       </div>
     </div>
     <div class="reveal">
-      <div class="kontakt-form">
+      <form class="kontakt-form" id="kontakt-form">
+        <input type="hidden" name="_subject" value="Ny henvendelse – svaneeng.dk">
+        <input type="hidden" name="_language" value="da">
         <div class="form-row">
           <div class="form-group">
-            <label>Navn</label>
-            <input type="text" placeholder="Dit fulde navn">
+            <label for="navn">Navn</label>
+            <input type="text" id="navn" name="navn" placeholder="Dit fulde navn" required>
           </div>
           <div class="form-group">
-            <label>Telefon</label>
-            <input type="tel" placeholder="+45 00 00 00 00">
+            <label for="telefon">Telefon</label>
+            <input type="tel" id="telefon" name="telefon" placeholder="+45 00 00 00 00">
           </div>
         </div>
         <div class="form-group">
-          <label>E-mail</label>
-          <input type="email" placeholder="din@email.dk">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="din@email.dk" required>
         </div>
         <div class="form-group">
-          <label>Projekttype</label>
-          <select>
+          <label for="projekttype">Projekttype</label>
+          <select id="projekttype" name="projekttype">
             <option value="">Vælg en kategori</option>
             <option>Hovedentreprise</option>
             <option>Tømrerentreprise</option>
@@ -881,16 +883,22 @@
             <option>Facaderenovering</option>
             <option>Tagrenovering</option>
             <option>Lejlighedsrenovering</option>
-            <option>Service & løbende vedligehold</option>
+            <option>Service &amp; løbende vedligehold</option>
             <option>Andet</option>
           </select>
         </div>
         <div class="form-group">
-          <label>Besked</label>
-          <textarea placeholder="Fortæl os kort om dit projekt – placering, omfang og ønsket tidsramme…"></textarea>
+          <label for="besked">Besked</label>
+          <textarea id="besked" name="besked" placeholder="Fortæl os kort om dit projekt – placering, omfang og ønsket tidsramme…"></textarea>
         </div>
-        <button class="form-submit">Send besked →</button>
-      </div>
+        <div id="form-success" style="display:none; padding:1rem; background:rgba(43,92,69,0.08); border-left:3px solid #2d6a4f; border-radius:2px; font-size:0.9rem; color:#2d6a4f; margin-bottom:1rem;">
+          ✓ Tak for din besked! Vi vender tilbage hurtigst muligt.
+        </div>
+        <div id="form-error" style="display:none; padding:1rem; background:rgba(155,35,53,0.08); border-left:3px solid var(--accent); border-radius:2px; font-size:0.9rem; color:var(--accent); margin-bottom:1rem;">
+          Noget gik galt. Prøv igen eller skriv direkte til info@svaneeng.dk
+        </div>
+        <button type="submit" class="form-submit" id="form-submit-btn">Send besked →</button>
+      </form>
     </div>
   </div>
 </section>
@@ -992,10 +1000,39 @@
     });
   }
 
-  // Form submit (placeholder)
-  document.querySelector('.form-submit').addEventListener('click', () => {
-    alert('Tak for din besked! Vi vender tilbage hurtigst muligt.');
-  });
+  // Formspree kontaktformular
+  const kontaktForm = document.getElementById('kontakt-form');
+  if (kontaktForm) {
+    kontaktForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = document.getElementById('form-submit-btn');
+      const successMsg = document.getElementById('form-success');
+      const errorMsg = document.getElementById('form-error');
+      btn.textContent = 'Sender…';
+      btn.disabled = true;
+      successMsg.style.display = 'none';
+      errorMsg.style.display = 'none';
+      try {
+        const response = await fetch('https://formspree.io/f/mljdjwgp', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(kontaktForm)
+        });
+        if (response.ok) {
+          successMsg.style.display = 'block';
+          kontaktForm.reset();
+          btn.textContent = 'Send besked →';
+          btn.disabled = false;
+        } else {
+          throw new Error('Server error');
+        }
+      } catch (err) {
+        errorMsg.style.display = 'block';
+        btn.textContent = 'Send besked →';
+        btn.disabled = false;
+      }
+    });
+  }
 
   });
 </script>
