@@ -1000,39 +1000,48 @@
     });
   }
 
-  // Formspree kontaktformular
-  const kontaktForm = document.getElementById('kontakt-form');
-  if (kontaktForm) {
-    kontaktForm.addEventListener('submit', async function(e) {
-      e.preventDefault();
-      const btn = document.getElementById('form-submit-btn');
-      const successMsg = document.getElementById('form-success');
-      const errorMsg = document.getElementById('form-error');
-      btn.textContent = 'Sender…';
-      btn.disabled = true;
-      successMsg.style.display = 'none';
-      errorMsg.style.display = 'none';
-      try {
-        const response = await fetch('https://formspree.io/f/mljdjwgp', {
-          method: 'POST',
-          headers: { 'Accept': 'application/json' },
-          body: new FormData(kontaktForm)
-        });
-        if (response.ok) {
+// Kontaktformular – sender til Power Automate (Office 365-mail) og Formspree som backup
+    const kontaktForm = document.getElementById('kontakt-form');
+    if (kontaktForm) {
+      const POWER_AUTOMATE_URL = 'https://default5e6339d498344d55b8f686b16d972f.4c.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/06/workflows/4d0b7d063ca44d9db2a2a5a3afb74b72/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=UnfP4oILQNGa3zIepHLu-Q3JP4tZj8hQinNegY7oIxU';
+
+      kontaktForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const btn = document.getElementById('form-submit-btn');
+        const successMsg = document.getElementById('form-success');
+        const errorMsg = document.getElementById('form-error');
+        btn.textContent = 'Sender…';
+        btn.disabled = true;
+        successMsg.style.display = 'none';
+        errorMsg.style.display = 'none';
+
+        const data = Object.fromEntries(new FormData(kontaktForm).entries());
+
+        const results = await Promise.allSettled([
+          fetch(POWER_AUTOMATE_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+          }),
+          fetch('https://formspree.io/f/mljdjwgp', {
+            method: 'POST',
+            headers: { 'Accept': 'application/json' },
+            body: new FormData(kontaktForm)
+          })
+          ]);
+
+        const success = results.some(r => r.status === 'fulfilled' && r.value.ok);
+
+        if (success) {
           successMsg.style.display = 'block';
           kontaktForm.reset();
-          btn.textContent = 'Send besked →';
-          btn.disabled = false;
         } else {
-          throw new Error('Server error');
+          errorMsg.style.display = 'block';
         }
-      } catch (err) {
-        errorMsg.style.display = 'block';
         btn.textContent = 'Send besked →';
         btn.disabled = false;
-      }
-    });
-  }
+      });
+    }
 
   });
 </script>
