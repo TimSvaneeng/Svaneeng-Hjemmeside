@@ -827,16 +827,16 @@
         <div class="form-row">
           <div class="form-group">
             <label for="navn">Navn</label>
-            <input type="text" id="navn" name="navn" placeholder="Dit fulde navn" required>
+            <input type="text" id="navn" name="navn" placeholder="Dit fulde navn" maxlength="80" autocomplete="name" required>
           </div>
           <div class="form-group">
             <label for="telefon">Telefon</label>
-            <input type="tel" id="telefon" name="telefon" placeholder="+45 00 00 00 00">
+            <input type="tel" id="telefon" name="telefon" placeholder="+45 00 00 00 00" maxlength="20" autocomplete="tel">
           </div>
         </div>
         <div class="form-group">
           <label for="email">E-mail</label>
-          <input type="email" id="email" name="email" placeholder="din@email.dk" required>
+          <input type="email" id="email" name="email" placeholder="din@email.dk" maxlength="120" autocomplete="email" required>
         </div>
         <div class="form-group">
           <label for="projekttype">Projekttype</label>
@@ -854,7 +854,11 @@
         </div>
         <div class="form-group">
           <label for="besked">Besked</label>
-          <textarea id="besked" name="besked" placeholder="Fortæl os kort om dit projekt – placering, omfang og ønsket tidsramme…"></textarea>
+          <textarea id="besked" name="besked" maxlength="3000" placeholder="Fortæl os kort om dit projekt – placering, omfang og ønsket tidsramme…"></textarea>
+        </div>
+        <div aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;">
+          <label for="_gotcha">Lad dette felt stå tomt</label>
+          <input type="text" id="_gotcha" name="_gotcha" tabindex="-1" autocomplete="off">
         </div>
         <div id="form-success" style="display:none; padding:1rem; background:rgba(43,92,69,0.08); border-left:3px solid #2d6a4f; border-radius:2px; font-size:0.9rem; color:#2d6a4f; margin-bottom:1rem;">
           ✓ Tak for din besked! Vi vender tilbage hurtigst muligt.
@@ -970,17 +974,63 @@
     if (kontaktForm) {
       const POWER_AUTOMATE_URL = 'https://default5e6339d498344d55b8f686b16d972f.4c.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/06/workflows/4d0b7d063ca44d9db2a2a5a3afb74b72/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=UnfP4oILQNGa3zIepHLu-Q3JP4tZj8hQinNegY7oIxU';
 
+      // Spambeskyttelse: skjult felt, minimumstid og enkle kontroller af indholdet
+      const formStartet = Date.now();
+      const standardFejl = document.getElementById('form-error').textContent;
+
+      function lignerTilfaeldigt(tekst) {
+        return tekst.split(/\s+/).some(function(ord) {
+          if (ord.length < 10 || /[@.:\/]/.test(ord)) return false;
+          return (ord.slice(1).match(/[A-ZÆØÅ]/g) || []).length >= 3;
+        });
+      }
+
+      // Returnerer 'bot' (afvises lydløst), en fejltekst til brugeren, eller '' hvis alt er i orden
+      function tjekHenvendelse(d, forlobMs) {
+        if (d._gotcha || forlobMs < 3000) return 'bot';
+        const navn = (d.navn || '').trim();
+        const besked = (d.besked || '').trim();
+        const lokal = ((d.email || '').trim().toLowerCase().split('@')[0]) || '';
+        if (lignerTilfaeldigt(navn) || lignerTilfaeldigt(besked)) return 'bot';
+        if (besked.length >= 12 && !/[\s@.\/]/.test(besked)) return 'bot';
+        if ((lokal.match(/\./g) || []).length >= 4) return 'bot';
+        const tlf = (d.telefon || '').trim();
+        if (tlf) {
+          const cifre = tlf.replace(/\D/g, '');
+          const dansk = cifre.length === 8 || (cifre.length === 10 && cifre.startsWith('45')) || (cifre.length === 12 && cifre.startsWith('0045'));
+          const udland = /^\+(?!\s*45)/.test(tlf) && cifre.length >= 8 && cifre.length <= 15;
+          if (!dansk && !udland) return 'Kontrollér telefonnummeret – et dansk nummer har 8 cifre.';
+        }
+        if (navn.length < 2) return 'Skriv venligst dit navn.';
+        return '';
+      }
+
       kontaktForm.addEventListener('submit', async function(e) {
         e.preventDefault();
         const btn = document.getElementById('form-submit-btn');
         const successMsg = document.getElementById('form-success');
         const errorMsg = document.getElementById('form-error');
-        btn.textContent = 'Sender…';
-        btn.disabled = true;
         successMsg.style.display = 'none';
         errorMsg.style.display = 'none';
+        errorMsg.textContent = standardFejl;
 
         const data = Object.fromEntries(new FormData(kontaktForm).entries());
+        const kontrol = tjekHenvendelse(data, Date.now() - formStartet);
+        if (kontrol === 'bot') {
+          // Intet sendes, men afsenderen får samme kvittering som ellers
+          successMsg.style.display = 'block';
+          kontaktForm.reset();
+          return;
+        }
+        if (kontrol) {
+          errorMsg.textContent = kontrol;
+          errorMsg.style.display = 'block';
+          return;
+        }
+        data._t = Date.now() - formStartet;
+
+        btn.textContent = 'Sender…';
+        btn.disabled = true;
 
         const results = await Promise.allSettled([
           fetch(POWER_AUTOMATE_URL, {
